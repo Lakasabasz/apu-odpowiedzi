@@ -15,9 +15,58 @@
     
     \section{Wykład}
     \begin{enumerate}
-        \item Definicja procesów uczenia
-        \item Przykłady problemów rozwiązywanych przez systemy uczące się
+        \item Definicja procesów uczenia \\
+        Nie ma jednej definicji procesów uczenia się:
+        \begin{itemize}
+            \item ``Uczenie się oznacza zmiany w systemie, które mają charakter adaptacyjny
+            w tym sensie, że pozwalają systemowi wykonać za następnym razem takie
+            same zadanie lub zadania podobne bardziej efektywnie'' - Herbert Simon
+            (1983)
+            \item ``System uczący się wykorzystuje zewnętrzne dane empiryczne w celu tworzenia
+            i aktualizacji podstaw dla udoskonalania działania na podobnych danych w przyszłości
+            oraz wyrażania tych podstaw w zrozumiałej i symbolicznej postaci'' - Donald Miche
+            (1991)
+            \item ``Uczenie sie to konstruowanie i zmiana reprezentacji doświadczanych
+            faktów.
+            W ocenie konstruowanych reprezentacji bierze się pod uwagę:
+            \begin{enumerate}
+                \item wiarygodność - określa stopień w jakim reprezentacja odpowiada rzeczywistości;
+                \item efektywność - charakteryzuje przydatność reprezentacji do osiągania danego celu;
+                \item poziom abstrakcji - odpowiada zakresowi szczegółowości i precyzji pojęć używanych
+                w reprezentacji; określa on tzw.\ moc opisową reprezentacji.
+                Reprezentacja jest rozumiana jako np.\ opisy symboliczne, algorytmy,
+                modele symulacyjne, plany obrazy.'' - Ryszard Michalski (1986)
+            \end{enumerate}
+            \item Elementem wspólnym tych definicji są: Wejście (dane empiryczne), miara oceny (Zmiany 
+            i poprawa działania) oraz postulat zdobywania wiedzy, reprezentowania jej wewnątrz systemu
+            i stosowania jej do wykonania zadania (nacisk na zrozumiałość reprezentacji)
+        \end{itemize}
+        \item Przykłady problemów rozwiązywanych przez systemy uczące się \\
+        \begin{itemize}
+            \item Uczenie się rozpoznawania mowy
+            \item Uczenie się kierowania pojazdem (np.\ ALVINN)
+            \item Uczenie się klasyfikacji obiektów astronomicznych (NASA Sky Survey)
+            \item Uczenie się rozgrywania pewnych gier
+            \item Uczenie się rozpoznawania chorób na podstawie symptomów
+            \item Uczenie się rozpoznawanie pisma na podstawie przykładów
+            \item Uczenie się klasyfikowania tekstów do grup tematycznych
+            \item Uczenie się aproksymacji nieznanej funkcji na podstawie próbek
+            \item Uczenie się odnajdowania drogi w nieznanym środowisku
+            \item Automatyczne odkrywanie zależności funkcyjnych w danych
+            \item Przewidywanie trendów w danych finansowych
+        \end{itemize}
+        \clearpage
         \item Motywacje dla budowy systemów uczących się
+        \begin{itemize}
+            \item Zadania eksploracji i analizy danych, gdzie duże rozmiary zbiorów
+            danych uniemożliwiają ich analizę w sposób nieautomatyczny (np.
+            ekonomiczne lub medyczne bazy danych)
+            \item Środowiska gdzie system musi sie˛ dynamicznie dostosowywać do
+            zmieniających sie˛ warunków (np.\ systemy sterowania)
+            \item Problemy które są złożone, trudne do opisu i często nie posiadają
+            wystarczających modeli teoretycznych albo ich uzyskanie jest bardzo
+            kosztowne lub malo wiarygodne.
+        \end{itemize}
         \item Klasyfikacja metod maszynowego uczenia się
         \item Tworzenie modelu uczenia maszynowego
         \item Język R. Wykonywanie instrukcji
