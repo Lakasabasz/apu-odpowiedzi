@@ -91,10 +91,13 @@
         Zapisywanie ma postać \mintinline{r}|zmienna <- wartość|.
         \item Korzystanie z pomocy R
         \begin{itemize}
-        	\item \mintinline{r}|help(max)|
-        	\item \mintinline{r}|?max|
-        	\item \mintinline{r}|??max|
-        	\item \mintinline{r}|??"max function"|
+        	\item \mintinline{r}|help(max)| - klasyczna pomoc
+        	\item \mintinline{r}|?max| - skrócona wersja
+        	\item \mintinline{r}|example(max)| - przykłady użycia
+        	\item \mintinline{r}|RSiteSearch("max function")| - przeszukiwanie forum
+        	\item \mintinline{r}|apropos("max", mode = "function")| - wyszukiwanie z funkcji z nazwą "max"
+        	\item \mintinline{r}|data()| - nazwy obiektów w pakiecie
+        	\item \mintinline{r}|vignette()| - pdf z dokumentacją
         \end{itemize}
         \item Zarządzanie obszarem roboczym R
         \item Pakiety rozszerzające R
