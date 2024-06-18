@@ -1,9 +1,9 @@
-﻿\documentclass[11pt]{article}
+\documentclass[11pt]{article}
 
 \usepackage{amsmath}
 \usepackage{babel}
 \usepackage[a4paper, margin={0.75in}]{geometry}
-
+\usepackage{minted}
 
 \begin{document}
     \begin{center}
@@ -61,16 +61,41 @@
             \item Zadania eksploracji i analizy danych, gdzie duże rozmiary zbiorów
             danych uniemożliwiają ich analizę w sposób nieautomatyczny (np.
             ekonomiczne lub medyczne bazy danych)
-            \item Środowiska gdzie system musi sie˛ dynamicznie dostosowywać do
-            zmieniających sie˛ warunków (np.\ systemy sterowania)
+            \item Środowiska gdzie system musi się dynamicznie dostosowywać do
+            zmieniających się warunków (np.\ systemy sterowania)
             \item Problemy które są złożone, trudne do opisu i często nie posiadają
             wystarczających modeli teoretycznych albo ich uzyskanie jest bardzo
-            kosztowne lub malo wiarygodne.
+            kosztowne lub mało wiarygodne.
         \end{itemize}
         \item Klasyfikacja metod maszynowego uczenia się
+        \begin{itemize}
+            \item Uczenie indukcyjne - na podstawie znanych faktów i obserwacji tworzona
+            jest uogólnienie, które próbuje dopasować wszystkie znane fakty do hipotezy
+            \item ``Nabywanie umiejętności'' - optymalizacja zastosowania już posiadanej
+            wiedzy w sposób zwiększający jej efektywność
+        \end{itemize}
         \item Tworzenie modelu uczenia maszynowego
-        \item Język R. Wykonywanie instrukcji
+        \begin{enumerate}
+            \item Przygotowanie danych (zebranie danych, uzupełnienie braków, normalizacja)
+            \item Zdefiniowanie zadania (regresja, klasyfikacja, grupowanie, inne)
+            \item Wybór metody (regresja liniowa, logistyczna, drzewa decyzyjne,
+            sieci neuronowe)
+            \item Strojenie parametrów
+            \item Ocena modelu
+        \end{enumerate}
+        \item Język R. Wykonywanie instrukcji\\
+        Sekwencyjne, możliwe wpisywanie kolejnych poleceń z konsoli lub z pliku skryptu
+        o rozszerzeniu *.R.
+        W konsoli występuje znak zachęty \mintinline{text}|>|.
+        Komentarz tworzony jest przez \mintinline{r}|#|.
+        Zapisywanie ma postać \mintinline{r}|zmienna <- wartość|.
         \item Korzystanie z pomocy R
+        \begin{itemize}
+        	\item \mintinline{r}|help(max)|
+        	\item \mintinline{r}|?max|
+        	\item \mintinline{r}|??max|
+        	\item \mintinline{r}|??"max function"|
+        \end{itemize}
         \item Zarządzanie obszarem roboczym R
         \item Pakiety rozszerzające R
         \item Skalary i wektory R
