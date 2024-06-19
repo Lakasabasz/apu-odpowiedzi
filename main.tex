@@ -100,9 +100,69 @@
         	\item \mintinline{r}|vignette()| - pdf z dokumentacją
         \end{itemize}
         \item Zarządzanie obszarem roboczym R
+        \begin{itemize}
+        	\item \mintinline{r}|getwd()| - ścieżka do aktualnego katalogu roboczego
+        	\item \mintinline{r}|setwd("..")| - ustawia nową ścieżkę do katalogu roboczego
+        	\item \mintinline{r}|ls()| - wyświetla zmienne obszaru roboczego
+        	\item \mintinline{r}|remove(a, b, c)| - usuwa zmienne a, b, c z obszaru roboczego
+        	\item \mintinline{r}|history(3)| - 3 ostatnio użyte instrukcje
+        	\item \mintinline{r}|savehistory("plik.txt")| - zapisuje historię do pliku
+        	\item \mintinline{r}|loadhistory("plik.txt")| - odczyt historii z pliku
+        	\item \mintinline{r}|save.image("workspace.RData")| - zapis obszaru roboczego do pliku
+        	\item \mintinline{r}|save(a, b, c, file = "workspace.RData")| - zapis tylko kilku zmiennych do pliku
+        	\item \mintinline{r}|load("workspace.RData")| - odczyt obszaru roboczego z pliku
+        \end{itemize}
         \item Pakiety rozszerzające R
-        \item Skalary i wektory R
-        \item Ramka danych R
+        \begin{itemize}
+        	\item \mintinline{r}|installed.packages()| - lista zainstalowanych paczek
+        	\item \mintinline{r}|search()| - wyszukiwanie w załadowanych paczkach
+        	\item \mintinline{r}|install.packages("RWeka")| - instalowanie paczki RWeka
+        	\item \mintinline{r}|library(RWeka)| - ładowanie paczki RWeka
+        \end{itemize}
+        \item Skalary i wektory R \\
+        Skalary obejmują pojedyncze liczby, łańcuchy znaków i wartości logiczne.
+        Typ każdej zmiennej i wyrażenia można sprawdzić funkcją \mintinline{r}|class(obj)|.
+        Np. \mintinline{r}|class(2)| zwróci \mintinline{text}|[1] "numeric"|.
+        Każda liczba (bez względu czy double czy int) to numeric. \\
+        Operacje na liczbach:
+        \begin{itemize}
+        	\item +, -, *, / (dodawanie, odejmowanie, mnożenie, dzielenie)
+        	\item \%\% (modulo)
+        	\item \^ (potęga)
+        	\item sqrt(n) (pierwiastek kwadratowy)
+        \end{itemize}
+        Dla znaków łączenie nie działa z + tylko z funkcją \mintinline{r}|paste("a", "b", "c", sep=" ")|.
+        Dla typów logicznych operacje porównania są takie same jak w C++ czy Csharp. \\
+        Wektor obejmuje wiele skalarów tego samego typu.
+        Są jednowymiarowe.
+        Do utworzenia wektora używa się funkcji \mintinline{r}|c(obj, ...)|.
+        Próba utworzenia wektora o różnych typach spowoduje konwersję typów. \\
+        Można utworzyć sekwencję, która będzie również zachowywała się jak wektor.
+        Tworzy się ją przy użyciu operatora \mintinline{r}|<liczba>:<liczba>| lub funkcji \mintinline{r}|seq(<liczba>, <liczba>, <krok>)|.
+        Wektory indeksujemy od 1, a nie od 0.
+        Ujemne wartości w indeksie to pobranie wszystkiego \textbf{oprócz} ostatnich N.
+        W indekserze można użyć wektora indeksów.
+        Zwróci on wtedy wektor z wartościami o indeksach jakie zostały wskazane.
+        Można też użyć sekwencji do pobierania tych wartości. \\
+        Do sprawdzenia długości wektora używa się \mintinline{r}|length(vect)|.
+        \item Ramka danych R \\
+        Ramka danych to powiązanie dwóch wektorów o tej samej długości. Np. imię i wiek.
+        Do jej utworzenia używa się \mintinline{r}|data.frame(label = vector, label = vector)|.
+        \mintinline{r}|names(ramka)| pozwala na wyświetlenie nazw kolumn.
+        Konstrukcja \mintinline{r}|names(ramka) <- c ("abc", "cde")| umożliwia nadpisanie nazw w ramce.
+        Indeksując ramkę indeksujemy wiersze, ale możemy użyć konstrukcji \mintinline{r}|frame[1, 1]| co zwróci nam dane tylko z pierwszej kolumny.
+        Korzystając z operatora \mintinline{r}|ramka$abc| można pobrać kolumnę po nazwie.
+        Można indeksować podając warunek: \mintinline{r}|ramka[ramka$abc < 10]|. \\
+        Dodawanie nowego wiersza możliwe jest przy użyciu funkcji \mintinline{r}|rbind(old, new)|.
+        Odpowiednio dodawanie kolumny wymaga funkcji \mintinline{r}|cbind(old, new)|. \\
+        Dodatkowe funkcje które pozwalają uzyskać informacje o ramce:
+        \begin{itemize}
+        	\item \mintinline{r}|lenght(ramka)| - Liczba kolumn w ramce
+        	\item \mintinline{r}|dim(ramka)| - Wymiary ramki
+        	\item \mintinline{r}|str(ramka)| - Tekstowy opis zawartości ramki
+        	\item \mintinline{r}|head(ramka, n = 2)| - Wyświetlenie pierwszych 2 wierszy w ramce
+        	\item \mintinline{r}|tail(ramka, n = 2)| - Wyświetlenie ostatnich 2 wierszy w ramce
+        \end{itemize}
         \item Przegląd wykresów
         \item Język R i uczenie maszynowe
     \end{enumerate}
