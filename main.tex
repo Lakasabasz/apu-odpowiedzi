@@ -4,6 +4,9 @@
 \usepackage{babel}
 \usepackage[a4paper, margin={0.75in}]{geometry}
 \usepackage{minted}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{graphicx}
 
 \begin{document}
     \begin{center}
@@ -163,10 +166,106 @@
         	\item \mintinline{r}|head(ramka, n = 2)| - Wyświetlenie pierwszych 2 wierszy w ramce
         	\item \mintinline{r}|tail(ramka, n = 2)| - Wyświetlenie ostatnich 2 wierszy w ramce
         \end{itemize}
+        \clearpage
         \item Przegląd wykresów
+        \begin{itemize}
+        	\item Histogram 
+        	\begin{minted}{r}
+hist(vector,
+	breaks = unique(vector),
+	right = FALSE, 
+	main = "Main title", 
+	xlab = "Label x", 
+	ylab = "Label y")
+        	\end{minted}
+        	
+        	\item Wykres pudełkowy - wizualizuje minimum, pierwszy kwartyl (0.25), medianę, drugi kwartyl (0.25) i wartość maksymalną
+        	\begin{minted}{r}
+boxplot(iris$Sepal.Width,
+	main = "Podstawowe staystyki dla szerokosci kwiatu sepal")
+        	\end{minted}
+        	
+        	\item Wykres kołowy
+        	\begin{minted}{r}
+pie(table(new_iris$Species) / length(new_iris$Species))
+        	\end{minted}
+        	
+        	\item Wykres wachlarzowy
+        	\begin{minted}{r}
+install.packages("plotrix")
+library(plotrix)
+fan.plot(percentage, labels = names(percentage))
+        	\end{minted}
+        	
+        	\item Wykres słupkowy
+        	\begin{minted}{r}
+count <- table(new_iris$Species)
+colors <- rainbow(3)
+barplot(count,
+	main = "Liczebnosc gatunkow",
+	ylim = c(0, 50),
+	xlab = "Gatunek",
+	ylab = "Ilosc",
+	col = colors)
+        	\end{minted}
+        	
+        	\begin{figure}[H]
+        		\begin{minipage}{.5\textwidth}
+        			\centering
+        			\includegraphics[width=\textwidth]{imgs/hist}
+        			\caption{Histogram}
+        		\end{minipage}
+        		\begin{minipage}{.5\textwidth}
+        			\centering
+        			\includegraphics[width=\textwidth]{imgs/box}
+        			\caption{Wykres pudełkowy}
+        		\end{minipage}
+        	\end{figure}
+        	\begin{figure}[H]
+        		\begin{minipage}{.5\textwidth}
+        			\centering
+        			\includegraphics[width=\textwidth]{imgs/pie}
+        			\caption{Wykres kołowy}
+        		\end{minipage}
+        		\begin{minipage}{.5\textwidth}
+        			\centering
+        			\includegraphics[width=\textwidth]{imgs/fan}
+        			\caption{Wykres wachlarzowy}
+        		\end{minipage}
+        	\end{figure}
+        	\begin{figure}[H]
+        		\centering
+        		\includegraphics[width=.5\textwidth]{imgs/barplot}
+        		\caption{Wykres słupkowy}
+        	\end{figure}
+        \end{itemize}
         \item Język R i uczenie maszynowe
+        \begin{itemize}
+        	\item Składniki uczenia maszynowego - szereg konceptów uczenia maszynowego
+        	\item Zbiór uczący - doświadczenie w postaci danych. 
+        	Zbiór może być etykietowany lub nieetykietowany.
+        	\item Atrybuty (cechy) - opis obiektów zbioru uczącego
+        	\item Instancja - zestaw atrybutów opisujących jeden obiekt
+        	\item Model - utworzone na podstawie danych rozwiązanie zadania
+        	\begin{itemize}
+        		\item Geometryczny - oparty o przestrzeń euklidesową.
+        		Tworzony przez regresję liniową, logistyczną lub maszynę wektorów
+        		wspierających (SVM, SMO)
+        		\item Logiczny - oparty o logiki matematyczne. Zawiera proste reguły
+        		w postaci warunków prowadzących do decyzji. Tworzony przez drzewa
+        		decyzyjne, JRipper, PART
+        		\item Probabilistyczny - oparty o prawdopodobieństwo warunkowe
+        		i regułę Bayesa
+        		\item Hybrydowe
+        	\end{itemize}
+        	\item Ewaluacja - sposoby oceny skuteczności modelu
+        	\begin{itemize}
+        		\item Podział na zbiory uczący i testowy
+        		\item 10-fold cross-validation - 10-krotne powtórzenie podziału zbioru
+        		uczącego. Efekt końcowy jest uśrednieniem poprzednich pomiarów.
+        	\end{itemize}
+        \end{itemize}
     \end{enumerate}
-    
     \section{Wykład}
     \begin{enumerate}
         \item Analiza eksploracyjna i analiza potwierdzająca
