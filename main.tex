@@ -268,15 +268,80 @@ barplot(count,
     \end{enumerate}
     \section{Wykład}
     \begin{enumerate}
-        \item Analiza eksploracyjna i analiza potwierdzająca
+        \item Analiza eksploracyjna i analiza potwierdzająca \\
+        Analiza potwierdzająca polega na odrzuceniu fałszywych wzorców.
+        Do tego używa się najczęściej metod:
+        \begin{itemize}
+        	\item testowania formalnego - sprawdzenie zachowania modelu przy użyciu
+        	danych nie użytych w analizie eksploracyjnej;
+        	\item teorii prawdopodobieństwa - sprawdzenie czy wzorce w pierwotnej próbce
+        	mogły powstać przypadkowo.
+        \end{itemize}
+        Analiza eksploracyjna to stosowanie różnych technik prowadzących do wykrycia
+        zależności między danymi i powstania modeli. Ludzie mają tendencję do
+        znajdowania fałszywych wzorców, które nie istnieją. Analiza eksploracyjna
+        musi być uzupełniona analizą potwierdzającą.
+        
         \item Czym są dane w uczeniu maszynowym?
+        Zbiór danych to tabela w której wiersze odpowiadają za obserwacje zjawisk,
+        a kolumny opisują cechy (atrybuty) tej obserwacji. Dane układające się
+        w formie tabeli nazywa się modelem danych prostokątnych. \\
+        Operacje na takich danych można wizualizować rysunkami. Innym sposobem
+        na uproszczenie zbioru jest podsumowanie liczbowe.
+        
         \item Wnioskowanie o typach danych w kolumnach
-        \item Podsumowania liczbowe w R
+        \begin{itemize}
+        	\item \mintinline{r}|is.numeric(obj)|
+        	\item \mintinline{r}|is.character(obj)|
+        	\item \mintinline{r}|is.factor(obj)| - sprawdza czy wartości są skategoryzowane (zmienne typu factor). Zmienna taka wewnętrznie jest liczbą,
+        	ale gdy jest wyświetlana to tłumaczona zostaje na ciąg znaków.
+        \end{itemize}
+        
+        \item Podsumowania liczbowe w R \\
+        \mintinline{r}|summary(ramka)| - tworzy zestawienie składające się z minimum,
+        kwantyla pierwszego, mediany, średniej, kwantyla trzeciego i wartości maksymalnej.
+        
         \item Średnie, mediany i dominanty w R
+        \begin{itemize}
+        	\item \mintinline{r}|mean(obj)| - średnia
+        	\item \mintinline{r}|median(obj)| - mediana
+        	\item dominanty nie da się wyznaczyć wbudowaną funkcją ze względu na
+        	brak możliwości porównywania liczb zmiennoprzecinkowych, co jest 
+        	wymagane definicją.
+        \end{itemize}
+        
         \item Kwantyle w R
+        \begin{itemize}
+        	\item \mintinline{r}|quantile(vec)| - zwraca wartości dla 0, 25\%, 50\%,
+        	75\% i 100\%.
+        	\item \mintinline{r}|quantile(vec, probs=seq(0, 1, by=0.20))| - zwraca wartości dla co 20\% od 0 do 100\%.
+        \end{itemize}
+        
         \item Odchylenia standardowe i wariancje w R
+        \begin{itemize}
+        	\item \mintinline{r}|var(vec)| - wariancja
+        	\item \mintinline{r}|sd(vec)| - odchylenie standardowe
+        \end{itemize}
+        
+        \clearpage
         \item Eksploracyjne wizualizacje danych
+        Do użycia funkcji \mintinline{r}|ggplot| potrzeba załadować bibliotekę
+        \begin{itemize}
+        	\item Histogram
+        	\begin{minted}{r}
+ggplot(iris, aes(x = Sepal.Length)) + geom_histogram(binwidth = 0.1) + labs(x = "Sepal.Length", y = "liczba")
+        	\end{minted}
+        \end{itemize}
+        \begin{figure}[H]
+        	\begin{minipage}{.5\textwidth}
+        		\centering
+        		\includegraphics[width=\textwidth]{imgs/ggplot_hist}
+        		\caption{Histogram z ggplot}
+        	\end{minipage}
+        \end{figure}
+        
         \item Wizualizowanie powiązań pomiędzy kolumnami
+        % wykład 4 - piątek
         \item Klasyfikacja; Zdefiniowanie zadania
         \item Trening i testowanie klasyfikacji
         \item Kryteria porównawcze metod klasyfikacji
