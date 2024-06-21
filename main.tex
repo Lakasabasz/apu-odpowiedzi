@@ -458,7 +458,21 @@ geom_smooth()
         Lepsze drzewo to takie, które jest mniejsze. Stosuje się do tego przycinanie,
         czyli zastępowanie liściem lub mniejszym poddrzewem większego poddrzewa.
         
-        \item Problem brakujących wartości przy konstruowaniu drzew decyzyjnych
+        \item Problem brakujących wartości przy konstruowaniu drzew decyzyjnych \\
+        Możliwe rozwiązania
+        \begin{itemize}
+        	\item Wypełnienie nieznanych wartości atrybutu najczęściej
+        	występującą wartością w zbiorze obiektów związanych z
+        	aktualnym węzłem
+        	\item Wypełnienie nieznanych danych średnią ważoną wyznaczoną na
+        	zbiorze wartości
+        	\item Zatrzymanie procesu klasyfikacji i zwrócenie większościowej etykiety
+        	dla liścia
+        	\item Wypełnienie nieznanej wartości według jednej z heurystyk przy
+        	konstruowaniu drzewa
+        	\item Połączenie wszystkich pozostałych możliwości i zwrócenie rozkładu
+        	prawdopodobieństwa
+        \end{itemize}
         \item Analiza ROC jakości klasyfikacji
         \item Krzywe ROC
         \item Czułość, a specyficzność klasyfikacji binarnej
