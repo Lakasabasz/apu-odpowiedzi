@@ -423,9 +423,41 @@ geom_smooth()
         \clearpage
         
         \item Metody klasyfikacji
-        \item Drzewa decyzyjne
+        \begin{itemize}
+        	\item Klasyfikacja poprzez indukcję drzew decyzyjnych
+        	\item Klasyfikatory Bayes’owskie
+        	\item Sieci Neuronowe
+        	\item Analiza statystyczna
+        	\item Metaheurystyki (np. algorytmy genetyczne)
+        	\item Zbiory przybliżone
+        	\item k-NN – k-najbliższych sąsiadów
+        \end{itemize}
+        
+        \item Drzewa decyzyjne \\
+        To struktury drzewiaste, gdzie od korzenia odchodzą tylko dwie gałęzie.
+        Każdy z węzłów zawiera test od którego zależy czy wybrać lewą gałąź czy
+        prawą. Liść zawiera odpowiedź.
+        
         \item Funkcje testu w celu konstruowania drzew decyzyjnych
-        \item Konstrukcja drzew decyzyjnych
+        \begin{itemize}
+        	\item Univariate tree - testy operują na pojedynczym parametrze
+        	\item Multivariate tree - testy biorą pod uwagę wiele atrybutów
+        \end{itemize}
+        
+        \item Konstrukcja drzew decyzyjnych \\
+        Budowę drzewa decyzyjnego można opisać korzystając z 3. funkcji pomocniczych:
+        \begin{itemize}
+        	\item Warunek stopu - zatrzymaj tworzenie drzewa gdy zbiór jest pusty lub
+        	zawiera obiekty wyłącznie jednej klasy decyzyjnej lub żaden test nie może
+        	podzielić zbioru na dwa mniejsze;
+        	\item Wyznaczenie etykiet - wybór najliczniej reprezentowanej klasy w zbiorze;
+        	\item Wybór testu - heurystyka oceniająca testy. Funkcja wyboru musi być
+        	monotoniczna oraz przyjmować niskie wartości jeżeli różnorodność zbioru jest
+        	niska.
+        \end{itemize}
+        Lepsze drzewo to takie, które jest mniejsze. Stosuje się do tego przycinanie,
+        czyli zastępowanie liściem lub mniejszym poddrzewem większego poddrzewa.
+        
         \item Problem brakujących wartości przy konstruowaniu drzew decyzyjnych
         \item Analiza ROC jakości klasyfikacji
         \item Krzywe ROC
