@@ -473,11 +473,40 @@ geom_smooth()
         	\item Połączenie wszystkich pozostałych możliwości i zwrócenie rozkładu
         	prawdopodobieństwa
         \end{itemize}
-        \item Analiza ROC jakości klasyfikacji
-        \item Krzywe ROC
+        \item Analiza ROC jakości klasyfikacji. Krzywe ROC \\
+        Analiza ROC to porównanie wyników pozytywnie pozytywnych (PP lub TP),
+        fałszywie pozytywnych (FP, FP), pozytywnie negatywnych (PN, TN) i fałszywie
+        negatywnych (FN, FN). FP to zjawiska niepoprawnie sklasyfikowane jako negatywne,
+        a FN to zjawiska niepoprawnie sklasyfikowane jako pozytywne.
+        
         \item Czułość, a specyficzność klasyfikacji binarnej
-        \item Konstruowanie krzywych ROC
+        \begin{itemize}
+        	\item Czułość - $$sensitivity = \frac{TP}{TP+FP}$$
+        	\item Specyficzność - $$specificity = \frac{TN}{FP+TN} = 1 - \frac{FP}{TN+FP}$$
+        	\item Dokładność - $$precision = \frac{TP}{TP+FP}$$
+        \end{itemize}
+        
+        \item Konstruowanie krzywych ROC \\
+        Każdy punkt na wykresie to wartość czułości i specyficzności. Wartość ROC to
+        pole pod wykresem. Najgorszym rezultatem będzie ROC = 0.5 (czułość i specyficzność są sobie równe), a najlepszym ROC = 1.0 (czułość zawsze o wartości 100\%, a specyficzność dowolna).
+        
         \item Pakiet ROCR
+        \begin{minted}{r}
+        	install.package("ROCR")
+        	library(ROCR)
+        	perf <- performance(frame, optX, optY)
+        	plot(perf)
+        \end{minted}
+        opt może przyjąć wartość:
+        \begin{itemize}
+        	\item acc - dokładność
+        	\item err - error rate
+        	\item fpr - false positive
+        	\item tpr, sens, rec - true positive
+        	\item fnr - false negative
+        	\item tnr, spec - true negative
+        	\item ppv, prec - positive prediction value
+        \end{itemize}
     \end{enumerate}
     
     \section{Wykład}
