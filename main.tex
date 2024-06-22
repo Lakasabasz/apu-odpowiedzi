@@ -7,6 +7,8 @@
 \usepackage{float}
 \usepackage{multicol}
 \usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
 \begin{document}
     \begin{center}
@@ -537,6 +539,7 @@ geom_smooth()
         składowych, a następnie na przetwarzaniu sekwencji ocen opartych 
         o porównania parami.
         
+        \clearpage
         \item Kroki rozwiązywania problemu AHP
         \begin{enumerate}
         	\item dekompozycja i przedstawienie problemu w formie hierarchicznej
@@ -547,13 +550,60 @@ geom_smooth()
         	\item obliczanie priorytetów
         \end{enumerate}
         
-        \item Podstawy wieloatrybutowej teorii użyteczności
+        \item Podstawy wieloatrybutowej teorii użyteczności\\
+        Teoria użyteczności zakłada, że istnieje związek między preferencjami
+        decydenta, a funkcją użyteczności. Funkcja ta z kolei prezentuję relację
+        $\geq$ dla $\forall x, y \in \mathbb{R}: x \geq y \iff u(x) \geq u(y)$.
+        Warunkiem koniecznym istnienia funkcji użyteczności jest spełnienie przez nią
+        warunków racjonalności.
+        
         \item Agregacja ocen z wykorzystaniem macierzy porównań parami
+        Porównanie kryteriów parami można zapisać przy pomocy macierzy. Dla każdej dwójki określimy priorytet w postaci pewnej wagi. Mając N kryteriów możemy stworzyć macierz NxN:
+        \begin{math}
+        	\begin{bmatrix}
+        		W_{11} & W_{1i} & W_{1n} \\
+        		W_{j1} & W_{ji} & W_{jn} \\
+        		W_{n1} & W_{ni} & W_{nn}
+        	\end{bmatrix}
+        \end{math}
+        
         \item Skala preferencji względnej
-        \item Ocena spójności macierzy porównań parami
+        \begin{itemize}
+        	\item Sytuacja równoważności (1), kiedy obydwa elementy sa˛ równoważne;
+        	\item Sytuacja słabej preferencji (3), kiedy pierwszy element jest słabo
+        	preferowany względem drugiego, albo odwrotnie;
+        	\item Sytuacja istotnej preferencji (5), kiedy pierwszy element jest istotnie
+        	preferowany względem drugiego, albo odwrotnie;
+        	\item Sytuacja wyraźnej preferencji (7), kiedy pierwszy element jest wyraźnie
+        	preferowany względem drugiego, albo odwrotnie;
+        	\item Sytuacja bezwzględnej preferencji (9), kiedy pierwszy element jest
+        	bezwzględnie preferowany względem drugiego, albo odwrotnie
+        \end{itemize}
+        
+        \item Ocena spójności macierzy porównań parami\\
+        \begin{itemize}
+        	\item $\lambda_{max}$ - wartość własna macierzy (TGiP)
+        	\item $CI = \frac{\lambda_{max} - n}{n - 1}$ - indeks spójności (wartość poniżej 0.1 jest akceptowalna)
+        	\item $RI$ - losowy $CI$
+        	\item $CR = \frac{CI}{CR}$ - stosunek zgodności (wartość poniżej 0.1 jest akceptowalna) 
+        \end{itemize}
         \item Krok V – obliczenie priorytetów AHP
+        \begin{enumerate}
+        	\item Obliczenie najwyższej wartości własnej
+        	\item Obliczenie wektora własnego odpowiadającego tej macierzy
+        \end{enumerate}
+        Operację wykonuje się dla każdej macierzy porównań parami
+        
         \item Obliczanie przybliżonego wektora własnego macierzy porównań parami
         \item Inne metody rozwiązywania problemu AHP
         \item Przykłady zastosowań metody AHP
+        \begin{itemize}
+        	\item wybór lokalizacji
+        	\item wybór projektu danego przedsięwzięcia
+        	\item wybór dostawcy
+        	\item wybór technologii
+        	\item wybór członków zespołu, wybór kierownika projektu
+        	\item wybór produktu, np. auta, komputera
+        \end{itemize}
     \end{enumerate}
 \end{document}
